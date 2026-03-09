@@ -10,6 +10,8 @@ const projects = [
       'https://placehold.co/1400x900/141414/2e2e2e',
       'https://placehold.co/1400x900/111111/2b2b2b',
       'https://placehold.co/1400x900/161616/303030',
+      'https://placehold.co/1400x900/131313/2d2d2d',
+      'https://placehold.co/1400x900/101010/2a2a2a',
     ],
   },
   {
@@ -20,6 +22,8 @@ const projects = [
       'https://placehold.co/1400x900/1c1c1c/363636',
       'https://placehold.co/1400x900/191919/333333',
       'https://placehold.co/1400x900/1e1e1e/383838',
+      'https://placehold.co/1400x900/1b1b1b/353535',
+      'https://placehold.co/1400x900/181818/323232',
     ],
   },
   {
@@ -30,6 +34,8 @@ const projects = [
       'https://placehold.co/1400x900/101010/2a2a2a',
       'https://placehold.co/1400x900/0d0d0d/272727',
       'https://placehold.co/1400x900/121212/2c2c2c',
+      'https://placehold.co/1400x900/0f0f0f/292929',
+      'https://placehold.co/1400x900/0c0c0c/262626',
     ],
   },
   {
@@ -40,6 +46,8 @@ const projects = [
       'https://placehold.co/1400x900/181818/323232',
       'https://placehold.co/1400x900/151515/2f2f2f',
       'https://placehold.co/1400x900/1a1a1a/343434',
+      'https://placehold.co/1400x900/171717/313131',
+      'https://placehold.co/1400x900/141414/2e2e2e',
     ],
   },
   {
@@ -50,6 +58,8 @@ const projects = [
       'https://placehold.co/1400x900/202020/3a3a3a',
       'https://placehold.co/1400x900/1d1d1d/373737',
       'https://placehold.co/1400x900/222222/3c3c3c',
+      'https://placehold.co/1400x900/1f1f1f/393939',
+      'https://placehold.co/1400x900/1c1c1c/363636',
     ],
   },
   {
@@ -60,6 +70,8 @@ const projects = [
       'https://placehold.co/1400x900/0c0c0c/262626',
       'https://placehold.co/1400x900/0a0a0a/242424',
       'https://placehold.co/1400x900/0e0e0e/282828',
+      'https://placehold.co/1400x900/0b0b0b/252525',
+      'https://placehold.co/1400x900/090909/232323',
     ],
   },
 ];
@@ -172,14 +184,44 @@ function renderProject(project) {
   hero.loading = 'lazy';
   projectHero.appendChild(hero);
 
-  // Remaining images
-  project.images.slice(1).forEach((src, i) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = `${project.title} — image ${i + 2}`;
-    img.loading = 'lazy';
-    projectImages.appendChild(img);
-  });
+  // Second image: full width
+  const remaining = project.images.slice(1);
+  if (remaining.length === 0) return;
+
+  const secondImg = document.createElement('img');
+  secondImg.src = remaining[0];
+  secondImg.alt = `${project.title} — image 2`;
+  secondImg.loading = 'lazy';
+  projectImages.appendChild(secondImg);
+
+  // After second image: alternate pairs (half-width) then full-width
+  // Pattern repeats every 3: [pair, pair, full]
+  const afterSecond = remaining.slice(1);
+  let i = 0;
+  while (i < afterSecond.length) {
+    const posInGroup = i % 3;
+    if (posInGroup < 2) {
+      // Start of a pair row
+      const row = document.createElement('div');
+      row.className = 'image-row';
+      for (let j = 0; j < 2 && i < afterSecond.length && i % 3 < 2; j++, i++) {
+        const img = document.createElement('img');
+        img.src = afterSecond[i];
+        img.alt = `${project.title} — image ${i + 3}`;
+        img.loading = 'lazy';
+        row.appendChild(img);
+      }
+      projectImages.appendChild(row);
+    } else {
+      // Full-width single
+      const img = document.createElement('img');
+      img.src = afterSecond[i];
+      img.alt = `${project.title} — image ${i + 3}`;
+      img.loading = 'lazy';
+      projectImages.appendChild(img);
+      i++;
+    }
+  }
 }
 
 /* ==========================================

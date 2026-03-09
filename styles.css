@@ -244,7 +244,21 @@ p {
   margin-top: 0.5rem;
 }
 
-.project-images img {
+.image-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.image-row img {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 0;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.project-images > img {
   width: 100%;
   display: block;
   aspect-ratio: 16 / 9;
@@ -255,7 +269,7 @@ p {
   display: flex;
   flex-direction: row;
   gap: 80px;
-  padding: 80px 60px 80px 0;
+  padding: 28px 60px 80px 0;
   background: #000;
   color: #fff;
 }
@@ -284,7 +298,8 @@ p {
 .info-meta p strong {
   display: block;
   font-weight: 700;
-  margin-bottom: 1px;
+  margin-bottom: 7px;
+  line-height: 1;
 }
 
 .info-team {
@@ -301,7 +316,13 @@ p {
 .info-team p strong {
   display: block;
   font-weight: 700;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
+  line-height: 1;
+}
+
+.info-meta p:last-child,
+.info-team p:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================
