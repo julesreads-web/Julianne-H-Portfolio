@@ -1,0 +1,470 @@
+/* ==========================================
+   Reset & Base
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* ==========================================
+   Typography
+   ========================================== */
+
+/* Base paragraph */
+p {
+  line-height: 1.7;
+}
+
+/* H1 — site name, role, location, project title, nav links */
+.site-name,
+.site-role,
+.site-location,
+.project-title,
+.nav-link {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+}
+
+/* Overrides */
+.site-name {
+  display: block;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+
+.nav-link {
+  transition: color 0.15s;
+  width: fit-content;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+}
+
+/* Breadcrumb */
+.project-crumb {
+  font-size: 0.775rem;
+  color: #444;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: color 0.15s;
+  line-height: 1.5;
+}
+
+.project-crumb:not(:empty):hover {
+  color: #888;
+}
+
+/* Thumbnail caption */
+.thumb-title {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 400;
+  margin-top: 0.65rem;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+/* About label */
+.about-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #444;
+  margin-bottom: 2.5rem;
+}
+
+/* About body copy */
+.about-content p {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.about-content a {
+  color: #fff;
+  border-bottom: 1px solid #333;
+  transition: border-color 0.15s;
+}
+
+.about-content a:hover {
+  border-color: #fff;
+}
+
+
+/* ==========================================
+   Layout
+   ========================================== */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* ==========================================
+   Sidebar
+   ========================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100vh;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  border-right: none;
+  z-index: 10;
+}
+
+.sidebar-identity {
+  flex: 1;
+}
+
+/* ==========================================
+   Sidebar Nav
+   ========================================== */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ==========================================
+   Main Panel
+   ========================================== */
+.main {
+  margin-left: 25%;
+  width: 75%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 1.5rem 2rem 3rem;
+}
+
+/* ==========================================
+   Views
+   ========================================== */
+.view.is-hidden {
+  display: none;
+}
+
+/* ==========================================
+   Work Grid (Home Page)
+   ========================================== */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.thumb {
+  cursor: pointer;
+}
+
+.thumb-img-wrap {
+  overflow: hidden;
+  background: #0d0d0d;
+  line-height: 0;
+}
+
+.thumb-img-wrap img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.thumb:hover .thumb-img-wrap img {
+  opacity: 0.65;
+  transform: scale(1.03);
+}
+
+/* ==========================================
+   About Page
+   ========================================== */
+.about-content {
+  max-width: 520px;
+  padding-top: 0.5rem;
+}
+
+/* ==========================================
+   Project Pages
+   ========================================== */
+
+/* Spacer between project title and first image — edit height to adjust gap */
+.title-spacer {
+  height: 1.75rem;
+}
+#viewProject:not(.is-hidden) {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#projectHero img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.project-images img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  padding: 80px 60px 80px 0;
+  background: #000;
+  color: #fff;
+}
+
+.info-description {
+  flex: 2;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.info-description p {
+  margin: 0 0 20px 0;
+}
+
+.info-meta {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.info-meta p {
+  margin: 0 0 24px 0;
+}
+
+.info-meta p strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+
+.info-team {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.info-team p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.info-team p strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* ==========================================
+   Scrollbar styling (webkit)
+   ========================================== */
+.main::-webkit-scrollbar {
+  width: 4px;
+}
+
+.main::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 2px;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* ==========================================
+   Nav close button (hidden on desktop)
+   ========================================== */
+.nav-close {
+  display: none;
+}
+
+/* ==========================================
+   Hamburger (hidden on desktop)
+   ========================================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.25rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* ==========================================
+   Responsive — 900px and below
+   ========================================== */
+@media (max-width: 900px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 1.25rem 1.25rem 1.25rem;
+    border-right: none;
+    border-bottom: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #000;
+    z-index: 50;
+  }
+
+  .sidebar-identity {
+    flex: none;
+  }
+
+  .site-name,
+  .site-role,
+  .site-location {
+    display: block;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Nav hidden by default, full-screen overlay when open */
+  .sidebar-nav {
+    display: none;
+  }
+
+  .sidebar-nav.is-open {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20vh 1.25rem 1.5rem;
+    z-index: 40;
+    gap: 0;
+  }
+
+  .nav-close {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 0.15rem 0;
+  }
+
+  /* Keep identity text above the overlay */
+  .sidebar-identity {
+    position: relative;
+    z-index: 51;
+  }
+
+  .main {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+    padding: 1.25rem 1.25rem 4rem;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .project-info {
+    flex-wrap: wrap;
+    row-gap: 1.5rem;
+  }
+
+  .info-description {
+    flex: 0 0 100%;
+  }
+
+  .info-meta,
+  .info-team {
+    flex: 1;
+  }
+}

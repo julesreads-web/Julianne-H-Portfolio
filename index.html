@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julianne Herbert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- Fixed Left Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-identity">
+        <a href="#" class="site-name" id="siteNameLink">Julianne Herbert</a>
+        <p class="site-role">Senior Graphic<br>Designer</p>
+        <p class="site-location">Vancouver, BC</p>
+        <p class="project-crumb" id="projectCrumb"></p>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <button class="nav-close" id="navClose" aria-label="Close menu">&#215;</button>
+        <a href="#" class="nav-link" data-view="work">Work</a>
+        <a href="#" class="nav-link" data-view="about">About</a>
+        <a href="mailto:hello@julianneherbert.com" class="nav-link">Email</a>
+      </nav>
+
+    </aside>
+
+    <!-- Scrollable Right Panel -->
+    <main class="main" id="mainPanel">
+
+      <!-- Work Grid -->
+      <div id="viewWork" class="view">
+        <div class="work-grid" id="workGrid"></div>
+      </div>
+
+      <!-- About -->
+      <div id="viewAbout" class="view is-hidden">
+        <div class="about-content">
+          <p class="about-label">About</p>
+          <p>
+            Julianne Herbert is a Senior Graphic Designer based in Vancouver, BC, with over
+            ten years of experience working with studios, agencies, and independent clients.
+            Her work spans brand identity, editorial design, packaging, motion, and digital media.
+          </p>
+          <p>
+            She approaches every project with a careful eye for detail and a commitment to work
+            that is both visually striking and conceptually grounded.
+          </p>
+          <p>
+            Available for freelance and collaborative projects.
+            Get in touch at <a href="mailto:hello@julianneherbert.com">hello@julianneherbert.com</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Detail -->
+      <div id="viewProject" class="view is-hidden">
+        <div id="projectHero"></div>
+        <section class="project-info">
+          <div class="info-description">
+            <p>In 2022, the Odlum Brown VanOpen returned for their annual tennis event. Held at the Hollyburn Country Club, this tournament features top-tier players like Leylah Fernandez, Andy Murray, Félix Auger-Aliassime, and Heather Watson.</p>
+            <p>For this project, we did a brand refresh, launching new visuals and colours across various platforms, including the website, advertising, event program, and signage.</p>
+          </div>
+          <div class="info-meta">
+            <p><strong>Studio</strong><br>Ecstatic Design Studios<br>2024</p>
+            <p><strong>Role</strong><br>Graphic Designer</p>
+          </div>
+          <div class="info-team">
+            <p><strong>Team</strong><br>Chrystal Thompson, Creative Director<br>Christopher Jorgenson, Developer<br>Verena Dreikauß, Senior Designer</p>
+          </div>
+        </section>
+        <div class="project-images" id="projectImages"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
