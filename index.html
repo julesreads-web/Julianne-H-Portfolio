@@ -69,23 +69,21 @@
       <!-- Project Detail -->
       <div id="viewProject" class="view is-hidden">
         <div id="projectHero"></div>
-        <section class="project-info">
-          <div class="info-description">
-            <p>In 2022, the Odlum Brown VanOpen returned for their annual tennis event. Held at the Hollyburn Country Club, this tournament features top-tier players like Leylah Fernandez, Andy Murray, Félix Auger-Aliassime, and Heather Watson.</p>
-            <p>For this project, we did a brand refresh, launching new visuals and colours across various platforms, including the website, advertising, event program, and signage.</p>
-          </div>
-          <div class="info-meta">
-            <p><strong>Studio</strong><br>Ecstatic Design Studios<br>2024</p>
-            <p><strong>Role</strong><br>Graphic Designer</p>
-          </div>
-          <div class="info-team">
-            <p><strong>Team</strong><br>Chrystal Thompson, Creative Director<br>Christopher Jorgenson, Developer<br>Verena Dreikauß, Senior Designer</p>
-          </div>
-        </section>
+        <section class="project-info" id="projectInfo"></section>
         <div class="project-images" id="projectImages"></div>
       </div>
 
     </main>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox is-hidden" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#215;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous"></button>
+    <div class="lightbox-frame">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next"></button>
   </div>
 
   <script src="script.js"></script>

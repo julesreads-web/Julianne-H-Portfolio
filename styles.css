@@ -52,6 +52,10 @@ p {
 }
 
 /* Overrides */
+.project-title {
+  text-transform: capitalize;
+}
+
 .site-name {
   display: block;
   letter-spacing: 0;
@@ -88,10 +92,10 @@ p {
 .thumb-title {
   font-size: 0.85rem;
   color: #fff;
-  font-weight: 400;
+  font-weight: 700;
   margin-top: 0.65rem;
   letter-spacing: 0;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 /* About label */
@@ -227,7 +231,7 @@ p {
 #viewProject:not(.is-hidden) {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.3rem;
 }
 
 #projectHero img {
@@ -240,13 +244,13 @@ p {
 .project-images {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3.5rem;
   margin-top: 0.5rem;
 }
 
 .image-row {
   display: flex;
-  gap: 2rem;
+  gap: 3.5rem;
 }
 
 .image-row img {
@@ -265,11 +269,26 @@ p {
   object-fit: cover;
 }
 
+.img-zoom-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: block;
+}
+
+.img-zoom-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform-origin: center;
+}
+
 .project-info {
   display: flex;
   flex-direction: row;
   gap: 80px;
-  padding: 28px 60px 80px 0;
+  padding: 28px 60px 40px 0;
   background: #000;
   color: #fff;
 }
@@ -323,6 +342,94 @@ p {
 .info-meta p:last-child,
 .info-team p:last-child {
   margin-bottom: 0;
+}
+
+/* ==========================================
+   Lightbox
+   ========================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.lightbox.is-hidden {
+  display: none;
+}
+
+.lightbox-frame {
+  width: 75vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-frame img {
+  width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-prev::before,
+.lightbox-next::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.lightbox-prev::before {
+  transform: rotate(-135deg);
+}
+
+.lightbox-next::before {
+  transform: rotate(45deg);
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
 }
 
 /* ==========================================
@@ -478,6 +585,7 @@ p {
   .project-info {
     flex-wrap: wrap;
     row-gap: 1.5rem;
+    padding: 1rem 0 2rem;
   }
 
   .info-description {
@@ -487,5 +595,19 @@ p {
   .info-meta,
   .info-team {
     flex: 1;
+  }
+
+  .project-images,
+  .image-row {
+    gap: 1.75rem;
+  }
+
+  .image-row {
+    flex-direction: column;
+  }
+
+  .image-row img {
+    width: 100%;
+    flex: none;
   }
 }
