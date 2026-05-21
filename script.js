@@ -4,7 +4,7 @@
 const projects = [
   {
     id: 'brand-identity',
-    title: 'Odlum Brown VanOpen 2022',
+    title: 'Odlum Brown VanOpen',
     thumb: 'images/VO/00%20odlum-brown-vanopen-hero-posters-1860x1240.jpg',
     description: 'Returning after a two-year absence and newly elevated to a combined ATP and WTA Challenger 125 event, the Odlum Brown VanOpen needed a visual identity strong enough to compete nationally. We refreshed the brand with bold new visuals and a unified colour system deployed across the website, advertising, event program, and signage. The result positioned VanOpen as a world-class tournament worthy of the top-tier players taking the court at Hollyburn Country Club.',
     studio: 'Ecstatic Design Studios',
@@ -33,32 +33,75 @@ const projects = [
   },
   {
     id: 'editorial',
-    title: 'Editorial design',
-    thumb: 'https://placehold.co/1600x900/1c1c1c/363636',
-    description: '',
-    studio: '',
-    year: '',
-    role: '',
-    team: [],
+    title: 'Fresh St. Market x KITS Campaign',
+    thumb: 'images/FSM/FSM_Kits_Campaign_10.jpg',
+    thumbImages: [
+      'images/FSM/FSM_Kits_Campaign_10.jpg',
+      'images/FSM/FSM_Kits_Campaign_9.jpg',
+      'images/FSM/FSM_Kits_Campaign_7.jpg',
+      'images/FSM/FSM_Kits_Campaign_6.jpg',
+    ],
+    description: 'With Fresh St. Market opening in the heart of Kitsilano, the goal was to avoid feeling like an outsider and instead show it truly belongs. We united Kits and Fresh St. by carving "KITS" into fresh ingredients, using real people and produce—no AI—to make the neighbourhood the hero. The result is an instantly recognizable, authentic campaign that proves Fresh St. fits right in—because Kits were made for each other.',
+    studio: 'Spring Advertising',
+    year: '2025',
+    role: 'Art Director/Designer',
+    team: [
+      'Rob Schlyecher, Creative Director',
+      'Taylor Lee, Associate Creative Director',
+    ],
     images: [
-      'https://placehold.co/1400x900/1c1c1c/363636',
-      'https://placehold.co/1400x900/191919/333333',
-      'https://placehold.co/1400x900/1e1e1e/383838',
-      'https://placehold.co/1400x900/1b1b1b/353535',
-      'https://placehold.co/1400x900/181818/323232',
+      'images/FSM/FSM_Kits_Campaign_1.jpg',
+      { type: 'video', src: 'videos/FSM_Kits_Campaign_Video.mp4' },
+      'images/FSM/FSM_Kits_Campaign_3.jpg',
+      'images/FSM/FSM_Kits_Campaign_4.jpg',
+      'images/FSM/FSM_Kits_Campaign_2.jpg',
+      'images/FSM/FSM_Kits_Campaign_6.jpg',
+      'images/FSM/FSM_Kits_Campaign_7.jpg',
+      'images/FSM/FSM_Kits_Campaign_8.jpg',
+      'images/FSM/FSM_Kits_Campaign_9.jpg',
+      'images/FSM/FSM_Kits_Campaign_10.jpg',
+      'images/FSM/FSM_Kits_Campaign_11.jpg',
+      'images/FSM/FSM_Kits_Campaign_12.jpg',
+    ],
+  },
+  {
+    id: 'packaging',
+    title: 'IGA 70th Anniversary Campaign',
+    thumb: 'images/IGA/IGA_70th_02.jpg',
+    thumbZoom: 1.2,
+    description: "To drive sales during IGA's 70th anniversary, the challenge was to move beyond standard promotions and reinforce the brand's legacy as a trusted, community cornerstone. We responded with a nostalgic, emotionally driven campaign using vintage images of Vancouver from the Vancouver Archives, highlighting that IGA has been local since 1955. Through in-store and social, we celebrated shared history and belonging—encouraging customers to shop more often.",
+    studio: 'Spring Advertising',
+    year: '2024',
+    role: 'Art Director/Designer',
+    team: [
+      'Rob Schlyecher, Creative Director',
+      'Taylor Lee, Associate Creative Director',
+    ],
+    images: [
+      'images/IGA/IGA_70th_01.jpg',
+      'images/IGA/IGA_70th_02.jpg',
+      'images/IGA/IGA_70th_03.jpg',
+      'images/IGA/IGA_70th_04.jpg',
+      'images/IGA/IGA_70th_05.jpg',
+      'images/IGA/IGA_70th_06.jpg',
+      'images/IGA/IGA_70th_07.jpg',
+      'images/IGA/IGA_70th_08.jpg',
+      'images/IGA/IGA_70th_09.jpg',
+      'images/IGA/IGA_70th_10.jpg',
+      'images/IGA/IGA_70th_11.jpg',
     ],
   },
   {
     id: 'agro-coffee',
     title: 'Agro Coffee Roasters',
-    thumb: 'images/Agro/01%20jh-agroroasters-packaging-bags-02-2022.gif',
+    thumb: 'images/Agro/00%20jh-agroroasters-packaging-bags-01-2022.jpg',
     description: 'Agro Roasters was scaling beyond their café roots focusing on wholesale and retail, and their packaging needed to reflect that ambition — standing out on shelves alongside established local brands. We created a wraparound illustration that connects across all sides of the bag, paired with a colour system that can flex across future coffee blends and product lines. The outcome was a cohesive packaging identity that lives beautifully on shelf as a complete work — and breaks apart just as well across merch, murals, and brand assets.',
     studio: 'Ecstatic Design Agency',
     year: '2023',
     role: 'Graphic and Web Designer, Illustrator',
     team: ['Chrystal Thompson, Creative Director', 'Christopher Jorgenson, Developer'],
     images: [
-      'images/Agro/00%20jh-agroroasters-packaging-bags-01-2022.jpg',
+      'images/Agro/01%20jh-agroroasters-packaging-bags-02-2022.gif',
       'images/Agro/02%20jh-agroroasters-branding-stickers-2022.jpg',
       'images/Agro/03%20jh-agroroasters-context-roaster-2022.jpg',
       'images/Agro/04%20jh-agroroasters-branding-illustration-2022.jpg',
@@ -71,42 +114,6 @@ const projects = [
       'images/Agro/12%20jh-agroroasters-website-responsive-2022.jpg',
       'images/Agro/11%20jh-agroroasters-packaging-box-2022.jpg',
       'images/Agro/13%20jh-agroroasters-website-fleet-2022.jpg',
-    ],
-  },
-  {
-    id: 'packaging',
-    title: 'Packaging',
-    thumb: 'https://placehold.co/1600x900/101010/2a2a2a',
-    images: [
-      'https://placehold.co/1400x900/101010/2a2a2a',
-      'https://placehold.co/1400x900/0d0d0d/272727',
-      'https://placehold.co/1400x900/121212/2c2c2c',
-      'https://placehold.co/1400x900/0f0f0f/292929',
-      'https://placehold.co/1400x900/0c0c0c/262626',
-    ],
-  },
-  {
-    id: 'motion',
-    title: 'Motion graphics',
-    thumb: 'https://placehold.co/1600x900/181818/323232',
-    images: [
-      'https://placehold.co/1400x900/181818/323232',
-      'https://placehold.co/1400x900/151515/2f2f2f',
-      'https://placehold.co/1400x900/1a1a1a/343434',
-      'https://placehold.co/1400x900/171717/313131',
-      'https://placehold.co/1400x900/141414/2e2e2e',
-    ],
-  },
-  {
-    id: 'web-design',
-    title: 'Web design',
-    thumb: 'https://placehold.co/1600x900/202020/3a3a3a',
-    images: [
-      'https://placehold.co/1400x900/202020/3a3a3a',
-      'https://placehold.co/1400x900/1d1d1d/373737',
-      'https://placehold.co/1400x900/222222/3c3c3c',
-      'https://placehold.co/1400x900/1f1f1f/393939',
-      'https://placehold.co/1400x900/1c1c1c/363636',
     ],
   },
   {
@@ -216,21 +223,23 @@ function renderGrid() {
     const thumb = document.createElement('div');
     thumb.className = 'thumb';
 
-    const firstSrc = project.carousel ? project.images[0] : (project.thumb || project.images[0]);
+    const cycleImages = project.thumbImages || (project.carousel ? project.images : null);
+    const firstSrc = cycleImages ? cycleImages[0] : (project.thumb || project.images[0]);
     thumb.innerHTML = `
       <div class="thumb-img-wrap">
-        <img src="${firstSrc}" alt="${project.title}" loading="lazy" />
+        <img src="${firstSrc}" alt="${project.title}" loading="lazy" ${project.thumbZoom ? `style="transform:scale(${project.thumbZoom});transform-origin:center;"` : ''} />
       </div>
       <p class="thumb-title">${project.title}</p>
     `;
 
-    if (project.carousel && project.images.length > 1) {
+    if (cycleImages && cycleImages.length > 1) {
       const img = thumb.querySelector('img');
       let index = 0;
+      const interval = project.thumbImages ? 500 : 2000;
       const id = setInterval(() => {
-        index = (index + 1) % project.images.length;
-        img.src = project.images[index];
-      }, 2000);
+        index = (index + 1) % cycleImages.length;
+        img.src = cycleImages[index];
+      }, interval);
       carouselIntervals.push(id);
     }
 
@@ -242,6 +251,68 @@ function renderGrid() {
 /* ==========================================
    Render Project Detail
    ========================================== */
+function isVideo(item) {
+  return item && typeof item === 'object' && item.type === 'video';
+}
+
+function makeMediaEl(item, index, allImages, altText) {
+  if (isVideo(item)) {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:relative;width:100%;line-height:0;';
+
+    const video = document.createElement('video');
+    video.src = item.src;
+    video.controls = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.style.cssText = 'width:100%;display:block;';
+
+    const playIcon = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="10,6 26,16 10,26" fill="#fff"/></svg>`;
+    const pauseIcon = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="5" height="20" fill="#fff"/><rect x="19" y="6" width="5" height="20" fill="#fff"/></svg>`;
+
+    const playBtn = document.createElement('button');
+    playBtn.setAttribute('aria-label', 'Play/Pause video');
+    playBtn.style.cssText = `
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:80px;height:80px;border-radius:50%;border:none;cursor:pointer;
+      background:rgba(255,255,255,0.2);backdrop-filter:blur(4px);
+      display:flex;align-items:center;justify-content:center;
+      transition:background 0.2s;
+    `;
+    playBtn.innerHTML = playIcon;
+    playBtn.addEventListener('mouseenter', () => playBtn.style.background = 'rgba(255,255,255,0.35)');
+    playBtn.addEventListener('mouseleave', () => playBtn.style.background = 'rgba(255,255,255,0.2)');
+    playBtn.addEventListener('click', () => {
+      if (video.paused) { video.play(); } else { video.pause(); }
+    });
+    video.addEventListener('play',  () => { playBtn.innerHTML = pauseIcon; playBtn.style.opacity = '0'; });
+    video.addEventListener('pause', () => { playBtn.innerHTML = playIcon;  playBtn.style.opacity = '1'; });
+    video.addEventListener('ended', () => { playBtn.innerHTML = playIcon;  playBtn.style.opacity = '1'; });
+    wrap.addEventListener('mouseenter', () => { if (!video.paused) playBtn.style.opacity = '1'; });
+    wrap.addEventListener('mouseleave', () => { if (!video.paused) playBtn.style.opacity = '0'; });
+    playBtn.style.transition = 'background 0.2s, opacity 0.2s';
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { video.play(); observer.disconnect(); }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(wrap);
+
+    wrap.appendChild(video);
+    wrap.appendChild(playBtn);
+    return wrap;
+  }
+  const img = document.createElement('img');
+  img.src = item;
+  img.alt = altText;
+  img.loading = 'lazy';
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => openLightbox(allImages, index));
+  return img;
+}
+
 function makeClickable(img, index, images) {
   img.style.cursor = 'zoom-in';
   img.addEventListener('click', () => openLightbox(images, index));
@@ -278,11 +349,7 @@ function renderProject(project) {
   spacer.className = 'title-spacer';
   projectHero.appendChild(spacer);
 
-  const hero = document.createElement('img');
-  hero.src = allImages[0];
-  hero.alt = `${project.title} — image 1`;
-  hero.loading = 'lazy';
-  makeClickable(hero, 0, allImages);
+  const hero = makeMediaEl(allImages[0], 0, allImages, `${project.title} — image 1`);
   projectHero.appendChild(hero);
 
   // Remaining images
@@ -291,56 +358,40 @@ function renderProject(project) {
 
   if (project.singleColumn) {
     // All images stacked full-width
-    remaining.forEach((src, idx) => {
+    remaining.forEach((item, idx) => {
       const imgIndex = idx + 1;
       const zoom = project.imageOptions?.[imgIndex]?.zoom;
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = `${project.title} — image ${imgIndex + 1}`;
-      img.loading = 'lazy';
-      makeClickable(img, imgIndex, allImages);
-      if (zoom) {
-        img.style.transform = `scale(${zoom})`;
+      const el = makeMediaEl(item, imgIndex, allImages, `${project.title} — image ${imgIndex + 1}`);
+      if (!isVideo(item) && zoom) {
+        el.style.transform = `scale(${zoom})`;
         const wrap = document.createElement('div');
         wrap.className = 'img-zoom-wrap';
-        wrap.appendChild(img);
+        wrap.appendChild(el);
         projectImages.appendChild(wrap);
       } else {
-        projectImages.appendChild(img);
+        projectImages.appendChild(el);
       }
     });
   } else {
     // Second image full width, then alternating pairs/singles
-    const secondImg = document.createElement('img');
-    secondImg.src = remaining[0];
-    secondImg.alt = `${project.title} — image 2`;
-    secondImg.loading = 'lazy';
-    makeClickable(secondImg, 1, allImages);
-    projectImages.appendChild(secondImg);
+    const secondEl = makeMediaEl(remaining[0], 1, allImages, `${project.title} — image 2`);
+    projectImages.appendChild(secondEl);
 
     const afterSecond = remaining.slice(1);
     let i = 0;
     while (i < afterSecond.length) {
       const posInGroup = i % 3;
-      if (posInGroup < 2) {
+      if (posInGroup < 2 && !isVideo(afterSecond[i])) {
         const row = document.createElement('div');
         row.className = 'image-row';
-        for (let j = 0; j < 2 && i < afterSecond.length && i % 3 < 2; j++, i++) {
-          const img = document.createElement('img');
-          img.src = afterSecond[i];
-          img.alt = `${project.title} — image ${i + 3}`;
-          img.loading = 'lazy';
-          makeClickable(img, i + 2, allImages);
-          row.appendChild(img);
+        for (let j = 0; j < 2 && i < afterSecond.length && i % 3 < 2 && !isVideo(afterSecond[i]); j++, i++) {
+          const el = makeMediaEl(afterSecond[i], i + 2, allImages, `${project.title} — image ${i + 3}`);
+          row.appendChild(el);
         }
         projectImages.appendChild(row);
       } else {
-        const img = document.createElement('img');
-        img.src = afterSecond[i];
-        img.alt = `${project.title} — image ${i + 3}`;
-        img.loading = 'lazy';
-        makeClickable(img, i + 2, allImages);
-        projectImages.appendChild(img);
+        const el = makeMediaEl(afterSecond[i], i + 2, allImages, `${project.title} — image ${i + 3}`);
+        projectImages.appendChild(el);
         i++;
       }
     }
@@ -383,6 +434,7 @@ let lightboxImages = [];
 let lightboxIndex  = 0;
 
 function openLightbox(images, index) {
+  if (isVideo(images[index])) return;
   lightboxImages = images;
   lightboxIndex  = index;
   lightboxImg.src = images[index];
@@ -397,7 +449,14 @@ function closeLightbox() {
 }
 
 function lightboxStep(dir) {
-  lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+  let next = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+  // Skip video entries
+  let attempts = 0;
+  while (isVideo(lightboxImages[next]) && attempts < lightboxImages.length) {
+    next = (next + dir + lightboxImages.length) % lightboxImages.length;
+    attempts++;
+  }
+  lightboxIndex = next;
   lightboxImg.src = lightboxImages[lightboxIndex];
 }
 

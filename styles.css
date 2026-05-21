@@ -215,9 +215,70 @@ p {
 /* ==========================================
    About Page
    ========================================== */
+.about-layout {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.about-photo-wrap {
+  flex: 0 0 auto;
+  width: 280px;
+}
+
+.about-photo-wrap img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .about-content {
+  flex: 1;
   max-width: 520px;
   padding-top: 0.5rem;
+}
+
+.about-meta {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3rem;
+}
+
+.about-meta-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.about-meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #444;
+  margin: 0 0 0.25rem !important;
+}
+
+.about-meta-item p {
+  font-size: 0.85rem;
+  color: #aaa;
+  line-height: 1.7;
+  margin: 0 !important;
+}
+
+.about-meta-item p strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.about-meta-clients {
+  font-size: 0.85rem;
+  color: #aaa;
+  line-height: 1.8;
+  margin: 0 !important;
 }
 
 /* ==========================================
@@ -328,7 +389,7 @@ p {
 }
 
 .info-team p {
-  margin: 0;
+  margin: 0 0 24px 0;
   line-height: 1.8;
 }
 
@@ -594,7 +655,7 @@ p {
 
   .info-meta,
   .info-team {
-    flex: 1;
+    flex: 0 0 100%;
   }
 
   .project-images,
@@ -609,5 +670,15 @@ p {
   .image-row img {
     width: 100%;
     flex: none;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-photo-wrap {
+    width: 100%;
+    max-width: 320px;
   }
 }
