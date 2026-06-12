@@ -117,6 +117,19 @@ const projects = [
     ],
   },
   {
+    id: 'prpa',
+    title: 'PRPA Economic Impact Campaign',
+    thumb: 'images/PRPA/PRPA_01.png',
+    description: '',
+    studio: '',
+    year: '',
+    role: '',
+    team: [],
+    images: [
+      'images/PRPA/PRPA_01.png',
+    ],
+  },
+  {
     id: 'various-branding',
     title: 'Various Logos',
     carousel: true,
