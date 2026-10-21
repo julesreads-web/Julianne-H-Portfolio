@@ -85,7 +85,7 @@ const projects = [
     team: [],
     images: [
       'images/PRPA/PRPA_01.png',
-      { type: 'hpan', src: 'images/PRPA/SM-Horizontal.png' },
+      { type: 'hpan', src: 'images/PRPA/SM-Horizontal.jpg' },
       { type: 'youtube', src: 'https://www.youtube.com/embed/OoIrvSxrBlM', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover02.jpg' },
       { type: 'youtube', src: 'https://www.youtube.com/embed/NTXXQYTTYNk', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover03.jpg' },
       { type: 'youtube', src: 'https://www.youtube.com/embed/WSQRRiK4YDI', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover01.jpg' },
