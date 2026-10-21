@@ -409,56 +409,46 @@ p {
 .project-info {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  column-gap: 80px;
-  row-gap: 1.5rem;
-  padding: 28px 60px 40px 0;
+  gap: 0 80px;
+  padding: 28px 0 40px 0;
   background: #000;
   color: #fff;
 }
 
 .info-description {
-  grid-column: 1;
-  grid-row: 1 / -1;
   font-size: 15px;
   line-height: 1.8;
   color: #fff;
 }
 
 .info-description p {
-  margin: 0 0 20px 0;
-}
-
-.info-meta {
-  grid-column: 2;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.info-meta p {
   margin: 0;
 }
 
-.info-meta p strong {
-  font-weight: 700;
+.info-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.info-team {
-  grid-column: 2;
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
   font-size: 15px;
-  line-height: 1.5;
-}
-
-.info-team p {
-  margin: 0;
-  line-height: 1.5;
-}
-
-.info-team p strong {
   font-weight: 700;
+  color: #fff;
+  margin: 0;
 }
 
-.info-team p + p {
-  margin-top: 1.5rem;
+.info-value {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #fff;
+  margin: 0;
 }
 
 /* ==========================================
@@ -701,17 +691,8 @@ p {
 
   .project-info {
     grid-template-columns: 1fr;
-    row-gap: 1.5rem;
+    gap: 1.5rem 0;
     padding: 1rem 0 2rem;
-  }
-
-  .info-description {
-    grid-row: auto;
-  }
-
-  .info-meta,
-  .info-team {
-    grid-column: 1;
   }
 
   .project-images,
