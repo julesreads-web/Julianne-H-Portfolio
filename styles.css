@@ -410,6 +410,7 @@ p {
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 80px;
+  row-gap: 1.5rem;
   padding: 28px 60px 40px 0;
   background: #000;
   color: #fff;
@@ -434,13 +435,13 @@ p {
 }
 
 .info-meta p {
-  margin: 0 0 24px 0;
+  margin: 0;
 }
 
 .info-meta p strong {
   display: block;
   font-weight: 700;
-  margin-bottom: 7px;
+  margin-bottom: 4px;
   line-height: 1;
 }
 
@@ -451,20 +452,19 @@ p {
 }
 
 .info-team p {
-  margin: 0 0 24px 0;
+  margin: 0;
   line-height: 1.8;
 }
 
 .info-team p strong {
   display: block;
   font-weight: 700;
-  margin-bottom: 7px;
+  margin-bottom: 4px;
   line-height: 1;
 }
 
-.info-meta p:last-child,
-.info-team p:last-child {
-  margin-bottom: 0;
+.info-team p + p {
+  margin-top: 1.5rem;
 }
 
 /* ==========================================
