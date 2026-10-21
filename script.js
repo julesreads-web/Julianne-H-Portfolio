@@ -47,7 +47,7 @@ const projects = [
       'images/FSM/FSM_Kits_Campaign_7.jpg',
       'images/FSM/FSM_Kits_Campaign_6.jpg',
     ],
-    thumbInterval: 2000,
+    thumbInterval: 1000,
     description: 'With Fresh St. Market opening in the heart of Kitsilano, the goal was to avoid feeling like an outsider and instead show it truly belongs. We united Kits and Fresh St. by carving "KITS" into fresh ingredients, using real people and produce—no AI—to make the neighbourhood the hero. The result is an instantly recognizable, authentic campaign that proves Fresh St. fits right in—because Kits were made for each other.',
     studio: 'Spring Advertising',
     year: '2025',
