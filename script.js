@@ -1,7 +1,96 @@
 /* ==========================================
+   Password Gate
+   ========================================== */
+(function () {
+  const gate = document.getElementById('passwordGate');
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('passwordError');
+  const PASSWORD = 'welcome!';
+
+  if (sessionStorage.getItem('auth') === '1') {
+    gate.classList.add('is-hidden');
+    return;
+  }
+
+  input.focus();
+
+  document.getElementById('passwordForm').addEventListener('submit', e => {
+    e.preventDefault();
+    if (input.value === PASSWORD) {
+      sessionStorage.setItem('auth', '1');
+      gate.classList.add('is-hidden');
+    } else {
+      error.textContent = 'Incorrect password.';
+      input.value = '';
+      input.focus();
+    }
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      document.getElementById('passwordForm').dispatchEvent(new Event('submit'));
+    }
+  });
+})();
+
+/* ==========================================
    Project Data
    ========================================== */
 const projects = [
+  {
+    id: 'editorial',
+    title: 'Fresh St. Market x KITS Campaign',
+    thumb: 'images/FSM/FSM_Kits_Campaign_10.jpg',
+    thumbImages: [
+      'images/FSM/FSM_Kits_Campaign_10.jpg',
+      'images/FSM/FSM_Kits_Campaign_9.jpg',
+      'images/FSM/FSM_Kits_Campaign_7.jpg',
+      'images/FSM/FSM_Kits_Campaign_6.jpg',
+    ],
+    thumbInterval: 2000,
+    description: 'With Fresh St. Market opening in the heart of Kitsilano, the goal was to avoid feeling like an outsider and instead show it truly belongs. We united Kits and Fresh St. by carving "KITS" into fresh ingredients, using real people and produce—no AI—to make the neighbourhood the hero. The result is an instantly recognizable, authentic campaign that proves Fresh St. fits right in—because Kits were made for each other.',
+    studio: 'Spring Advertising',
+    year: '2025',
+    role: 'Art Director/Designer',
+    team: [
+      'Rob Schlyecher, Creative Director',
+      'Taylor Lee, Associate Creative Director',
+    ],
+    images: [
+      'images/FSM/FSM_Kits_Campaign_1.jpg',
+      { type: 'video', src: 'videos/FSM_Kits_Campaign_Video.mp4' },
+      'images/FSM/FSM_Kits_Campaign_3.jpg',
+      'images/FSM/FSM_Kits_Campaign_4.jpg',
+      'images/FSM/FSM_Kits_Campaign_2.jpg',
+      'images/FSM/FSM_Kits_Campaign_6.jpg',
+      'images/FSM/FSM_Kits_Campaign_7.jpg',
+      'images/FSM/FSM_Kits_Campaign_8.jpg',
+      'images/FSM/FSM_Kits_Campaign_9.jpg',
+      'images/FSM/FSM_Kits_Campaign_10.jpg',
+      'images/FSM/FSM_Kits_Campaign_11.jpg',
+      'images/FSM/FSM_Kits_Campaign_12.jpg',
+    ],
+  },
+  {
+    id: 'prpa',
+    title: 'PRPA Economic Impact Campaign',
+    thumb: 'images/PRPA/PRPA_01.png',
+    thumbZoom: 1.2,
+    thumbY: '-10px',
+    singleColumn: true,
+    description: '',
+    studio: '',
+    year: '',
+    role: '',
+    team: [],
+    images: [
+      'images/PRPA/PRPA_01.png',
+      { type: 'hpan', src: 'images/PRPA/SM-Horizontal.png' },
+      { type: 'youtube', src: 'https://www.youtube.com/embed/OoIrvSxrBlM', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover02.jpg' },
+      { type: 'youtube', src: 'https://www.youtube.com/embed/NTXXQYTTYNk' },
+      { type: 'youtube', src: 'https://www.youtube.com/embed/WSQRRiK4YDI', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover01.jpg' },
+    ],
+  },
   {
     id: 'brand-identity',
     title: 'Odlum Brown VanOpen',
@@ -29,39 +118,6 @@ const projects = [
       'images/VO/19%20odlum-brown-vanopen-linespeep.jpg',
       'images/VO/18odlum-brown-vanopen-community-day-banner.jpg',
       'images/VO/17%20odlum-brown-vanopen-signage-map.jpg',
-    ],
-  },
-  {
-    id: 'editorial',
-    title: 'Fresh St. Market x KITS Campaign',
-    thumb: 'images/FSM/FSM_Kits_Campaign_10.jpg',
-    thumbImages: [
-      'images/FSM/FSM_Kits_Campaign_10.jpg',
-      'images/FSM/FSM_Kits_Campaign_9.jpg',
-      'images/FSM/FSM_Kits_Campaign_7.jpg',
-      'images/FSM/FSM_Kits_Campaign_6.jpg',
-    ],
-    description: 'With Fresh St. Market opening in the heart of Kitsilano, the goal was to avoid feeling like an outsider and instead show it truly belongs. We united Kits and Fresh St. by carving "KITS" into fresh ingredients, using real people and produce—no AI—to make the neighbourhood the hero. The result is an instantly recognizable, authentic campaign that proves Fresh St. fits right in—because Kits were made for each other.',
-    studio: 'Spring Advertising',
-    year: '2025',
-    role: 'Art Director/Designer',
-    team: [
-      'Rob Schlyecher, Creative Director',
-      'Taylor Lee, Associate Creative Director',
-    ],
-    images: [
-      'images/FSM/FSM_Kits_Campaign_1.jpg',
-      { type: 'video', src: 'videos/FSM_Kits_Campaign_Video.mp4' },
-      'images/FSM/FSM_Kits_Campaign_3.jpg',
-      'images/FSM/FSM_Kits_Campaign_4.jpg',
-      'images/FSM/FSM_Kits_Campaign_2.jpg',
-      'images/FSM/FSM_Kits_Campaign_6.jpg',
-      'images/FSM/FSM_Kits_Campaign_7.jpg',
-      'images/FSM/FSM_Kits_Campaign_8.jpg',
-      'images/FSM/FSM_Kits_Campaign_9.jpg',
-      'images/FSM/FSM_Kits_Campaign_10.jpg',
-      'images/FSM/FSM_Kits_Campaign_11.jpg',
-      'images/FSM/FSM_Kits_Campaign_12.jpg',
     ],
   },
   {
@@ -117,23 +173,21 @@ const projects = [
     ],
   },
   {
-    id: 'prpa',
-    title: 'PRPA Economic Impact Campaign',
-    thumb: 'images/PRPA/PRPA_01.png',
-    description: '',
-    studio: '',
-    year: '',
-    role: '',
-    team: [],
-    images: [
-      'images/PRPA/PRPA_01.png',
-    ],
-  },
-  {
     id: 'various-branding',
     title: 'Various Logos',
-    carousel: true,
+    carousel: false,
     singleColumn: true,
+    thumb: 'images/Various%20Logos/SSEHD-Logo.jpg',
+    thumbImages: [
+      'images/Various%20Logos/SSEHD-Logo.jpg',
+      'images/Various%20Logos/imgi_2_450146307_1518548882090752_7637286713458763038_n.jpg',
+      'images/Various%20Logos/imgi_10_smartfarmorganics_infographic_brand_logo.jpg',
+      'images/Various%20Logos/DD_Logo_V01.jpg',
+      'images/Various%20Logos/reddogfarm-brand-totebag-03.jpg',
+      'images/Various%20Logos/imgi_34_imgi_2_ecstatic-lumostage-branding-logo-embossed-1860x1240.jpg',
+      'images/Various%20Logos/IPSC_Logo.jpg',
+    ],
+    thumbInterval: 2000,
     description: 'A collection of logos and marks developed for clients over the years. Some live in the world, some live only in the archive.',
     studio: 'Ecstatic Design Studios<br>Spring Advertising',
     studioLabel: 'Studios',
@@ -230,6 +284,30 @@ function showView(name, project) {
    ========================================== */
 const carouselIntervals = [];
 
+/* ==========================================
+   Scroll-driven horizontal pan (sticky)
+   ========================================== */
+const hpanEls = [];
+
+function updateHpanScroll() {
+  const panelH   = mainPanel.clientHeight;
+  const panelTop = mainPanel.getBoundingClientRect().top;
+  hpanEls.forEach(({ outer, img }) => {
+    const outerRect   = outer.getBoundingClientRect();
+    const scrollRange = outer.offsetHeight - panelH;
+    const scrolled    = panelTop - outerRect.top;
+    const progress    = Math.max(0, Math.min(1, scrolled / scrollRange));
+    if (img.naturalWidth && img.naturalHeight) {
+      const imgDisplayW = (img.naturalWidth / img.naturalHeight) * panelH;
+      const overflow    = Math.max(0, imgDisplayW - outer.offsetWidth);
+      const maxPct      = (overflow / imgDisplayW) * 100;
+      img.style.transform = `translateX(${-maxPct * progress}%)`;
+    }
+  });
+}
+
+mainPanel.addEventListener('scroll', updateHpanScroll, { passive: true });
+
 function renderGrid() {
   workGrid.innerHTML = '';
   projects.forEach(project => {
@@ -240,7 +318,7 @@ function renderGrid() {
     const firstSrc = cycleImages ? cycleImages[0] : (project.thumb || project.images[0]);
     thumb.innerHTML = `
       <div class="thumb-img-wrap">
-        <img src="${firstSrc}" alt="${project.title}" loading="lazy" ${project.thumbZoom ? `style="transform:scale(${project.thumbZoom});transform-origin:center;"` : ''} />
+        <img src="${firstSrc}" alt="${project.title}" loading="lazy" ${(project.thumbZoom || project.thumbY) ? `style="transform:scale(${project.thumbZoom || 1}) translateY(${project.thumbY || 0});transform-origin:center;"` : ''} />
       </div>
       <p class="thumb-title">${project.title}</p>
     `;
@@ -248,7 +326,7 @@ function renderGrid() {
     if (cycleImages && cycleImages.length > 1) {
       const img = thumb.querySelector('img');
       let index = 0;
-      const interval = project.thumbImages ? 500 : 2000;
+      const interval = project.thumbInterval || (project.thumbImages ? 500 : 2000);
       const id = setInterval(() => {
         index = (index + 1) % cycleImages.length;
         img.src = cycleImages[index];
@@ -268,7 +346,73 @@ function isVideo(item) {
   return item && typeof item === 'object' && item.type === 'video';
 }
 
+function isYoutube(item) {
+  return item && typeof item === 'object' && item.type === 'youtube';
+}
+
+function isHpan(item) {
+  return item && typeof item === 'object' && item.type === 'hpan';
+}
+
 function makeMediaEl(item, index, allImages, altText) {
+  if (isHpan(item)) {
+    // Outer container is taller than the screen — user scrolls through it
+    const outer = document.createElement('div');
+    outer.style.cssText = 'position:relative;height:300vh;';
+    // Sticky inner stays fixed in view while the outer scrolls past
+    const sticky = document.createElement('div');
+    sticky.style.cssText = 'position:sticky;top:0;height:100vh;overflow:hidden;';
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = altText;
+    img.loading = 'lazy';
+    img.style.cssText = 'height:100%;width:auto;display:block;transform-origin:left center;';
+    sticky.appendChild(img);
+    outer.appendChild(sticky);
+    hpanEls.push({ outer, img });
+    return outer;
+  }
+  if (isYoutube(item)) {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;';
+
+    function loadIframe(autoplay) {
+      wrap.innerHTML = '';
+      const iframe = document.createElement('iframe');
+      iframe.src = autoplay ? item.src + '?autoplay=1' : item.src;
+      iframe.title = 'YouTube video player';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;';
+      wrap.appendChild(iframe);
+    }
+
+    if (item.poster) {
+      const cover = document.createElement('img');
+      cover.src = item.poster;
+      cover.alt = altText;
+      cover.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;cursor:pointer;';
+      const btn = document.createElement('button');
+      btn.setAttribute('aria-label', 'Play video');
+      btn.style.cssText = `position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+        width:80px;height:80px;border-radius:50%;border:none;cursor:pointer;
+        background:rgba(255,255,255,0.2);backdrop-filter:blur(4px);
+        display:flex;align-items:center;justify-content:center;transition:background 0.2s;`;
+      btn.innerHTML = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><polygon points="10,6 26,16 10,26" fill="#fff"/></svg>`;
+      btn.addEventListener('mouseenter', () => btn.style.background = 'rgba(255,255,255,0.35)');
+      btn.addEventListener('mouseleave', () => btn.style.background = 'rgba(255,255,255,0.2)');
+      cover.addEventListener('click', () => loadIframe(true));
+      btn.addEventListener('click', () => loadIframe(true));
+      wrap.appendChild(cover);
+      wrap.appendChild(btn);
+    } else {
+      loadIframe(false);
+    }
+
+    return wrap;
+  }
   if (isVideo(item)) {
     const wrap = document.createElement('div');
     wrap.style.cssText = 'position:relative;width:100%;line-height:0;';
@@ -334,6 +478,7 @@ function makeClickable(img, index, images) {
 function renderProject(project) {
   projectHero.innerHTML = '';
   projectImages.innerHTML = '';
+  hpanEls.length = 0;
 
   // Project info
   projectInfo.innerHTML = '';
@@ -447,7 +592,7 @@ let lightboxImages = [];
 let lightboxIndex  = 0;
 
 function openLightbox(images, index) {
-  if (isVideo(images[index])) return;
+  if (isVideo(images[index]) || isYoutube(images[index])) return;
   lightboxImages = images;
   lightboxIndex  = index;
   lightboxImg.src = images[index];
@@ -465,7 +610,7 @@ function lightboxStep(dir) {
   let next = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
   // Skip video entries
   let attempts = 0;
-  while (isVideo(lightboxImages[next]) && attempts < lightboxImages.length) {
+  while ((isVideo(lightboxImages[next]) || isYoutube(lightboxImages[next])) && attempts < lightboxImages.length) {
     next = (next + dir + lightboxImages.length) % lightboxImages.length;
     attempts++;
   }
