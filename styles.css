@@ -428,7 +428,7 @@ p {
 }
 
 .info-meta {
-  flex: 1;
+  grid-column: 2;
   font-size: 15px;
   line-height: 1.8;
 }
@@ -445,7 +445,7 @@ p {
 }
 
 .info-team {
-  flex: 1;
+  grid-column: 2;
   font-size: 15px;
   line-height: 1.8;
 }
