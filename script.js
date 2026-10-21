@@ -74,7 +74,7 @@ const projects = [
   {
     id: 'prpa',
     title: 'PRPA Economic Impact Campaign',
-    thumb: 'images/PRPA/PRPA_01.png',
+    thumb: 'images/PRPA/PRPA_EconomicCampaign_Cover04.jpg',
     thumbZoom: 1.2,
     thumbY: '-10px',
     singleColumn: true,
@@ -84,7 +84,7 @@ const projects = [
     role: '',
     team: [],
     images: [
-      'images/PRPA/PRPA_01.png',
+      'images/PRPA/PRPA_EconomicCampaign_Cover04.jpg',
       { type: 'hpan', src: 'images/PRPA/SM-Horizontal.jpg' },
       { type: 'youtube', src: 'https://www.youtube.com/embed/OoIrvSxrBlM', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover02.jpg' },
       { type: 'youtube', src: 'https://www.youtube.com/embed/NTXXQYTTYNk', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover03.jpg' },
