@@ -439,10 +439,7 @@ p {
 }
 
 .info-meta p strong {
-  display: block;
   font-weight: 700;
-  margin-bottom: 2px;
-  line-height: 1;
 }
 
 .info-team {
@@ -457,10 +454,7 @@ p {
 }
 
 .info-team p strong {
-  display: block;
   font-weight: 700;
-  margin-bottom: 2px;
-  line-height: 1;
 }
 
 .info-team p + p {

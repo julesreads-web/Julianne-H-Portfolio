@@ -487,11 +487,11 @@ function renderProject(project) {
     projectInfo.innerHTML = `
       <div class="info-description">${project.description ? `<p>${project.description}</p>` : ''}</div>
       <div class="info-meta">
-        ${project.studio ? `<p><strong>${project.studioLabel || 'Studio'}</strong>${project.studio}${project.year ? `<br>${project.year}` : ''}</p>` : ''}
+        ${project.studio ? `<p><strong>${project.studioLabel || 'Studio'}</strong><br>${project.studio}${project.year ? `<br>${project.year}` : ''}</p>` : ''}
       </div>
       <div class="info-team">
-        ${project.role   ? `<p><strong>Role</strong>${project.role}</p>` : ''}
-        ${project.team?.length ? `<p><strong>Team</strong>${project.team.join('<br>')}</p>` : ''}
+        ${project.role   ? `<p><strong>Role</strong><br>${project.role}</p>` : ''}
+        ${project.team?.length ? `<p><strong>Team</strong><br>${project.team.join('<br>')}</p>` : ''}
       </div>
     `;
   } else {
