@@ -358,7 +358,7 @@ function makeMediaEl(item, index, allImages, altText) {
   if (isHpan(item)) {
     // Outer container is taller than the screen — user scrolls through it
     const outer = document.createElement('div');
-    outer.style.cssText = 'position:relative;height:300vh;';
+    outer.style.cssText = 'position:relative;height:300vh;margin:0 2rem;';
     // Sticky inner stays fixed in view while the outer scrolls past
     const sticky = document.createElement('div');
     sticky.style.cssText = 'position:sticky;top:0;height:100vh;overflow:hidden;';
@@ -483,6 +483,7 @@ function renderProject(project) {
   // Project info
   projectInfo.innerHTML = '';
   if (project.description || project.studio || project.role || project.team?.length) {
+    projectInfo.style.display = '';
     projectInfo.innerHTML = `
       <div class="info-description">${project.description ? `<p>${project.description}</p>` : ''}</div>
       <div class="info-meta">
@@ -493,6 +494,8 @@ function renderProject(project) {
         ${project.team?.length ? `<p><strong>Team</strong>${project.team.join('<br>')}</p>` : ''}
       </div>
     `;
+  } else {
+    projectInfo.style.display = 'none';
   }
 
   const allImages = project.images;
