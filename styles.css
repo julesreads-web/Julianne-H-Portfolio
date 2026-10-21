@@ -431,7 +431,7 @@ p {
 .info-meta {
   grid-column: 2;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .info-meta p {
@@ -441,25 +441,25 @@ p {
 .info-meta p strong {
   display: block;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   line-height: 1;
 }
 
 .info-team {
   grid-column: 2;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .info-team p {
   margin: 0;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .info-team p strong {
   display: block;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   line-height: 1;
 }
 
