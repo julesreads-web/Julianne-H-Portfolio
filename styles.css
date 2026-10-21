@@ -407,17 +407,17 @@ p {
 }
 
 .project-info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 24px 80px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 80px;
   padding: 28px 60px 40px 0;
   background: #000;
   color: #fff;
 }
 
 .info-description {
-  flex: 0 0 100%;
+  grid-column: 1;
+  grid-row: 1 / -1;
   font-size: 15px;
   line-height: 1.8;
   color: #fff;
@@ -706,18 +706,18 @@ p {
   }
 
   .project-info {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
     row-gap: 1.5rem;
     padding: 1rem 0 2rem;
   }
 
   .info-description {
-    flex: 0 0 100%;
+    grid-row: auto;
   }
 
   .info-meta,
   .info-team {
-    flex: 0 0 100%;
+    grid-column: 1;
   }
 
   .project-images,
