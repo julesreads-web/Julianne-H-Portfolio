@@ -358,7 +358,7 @@ function makeMediaEl(item, index, allImages, altText) {
   if (isHpan(item)) {
     // Outer container is taller than the screen — user scrolls through it
     const outer = document.createElement('div');
-    outer.style.cssText = 'position:relative;height:300vh;margin:-1.2rem 0 -2.33rem;';
+    outer.style.cssText = 'position:relative;height:300vh;margin:-1.6rem 0 -3.1rem;';
     // Sticky inner stays fixed in view while the outer scrolls past
     const sticky = document.createElement('div');
     sticky.style.cssText = 'position:sticky;top:0;height:100vh;overflow:hidden;';
