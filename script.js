@@ -328,7 +328,7 @@ function renderGrid() {
     const firstSrc = cycleImages ? cycleImages[0] : (project.thumb || project.images[0]);
     thumb.innerHTML = `
       <div class="thumb-img-wrap">
-        <img src="${firstSrc}" alt="${project.title}" loading="lazy" ${(project.thumbZoom || project.thumbY) ? `style="transform:scale(${project.thumbZoom || 1}) translateY(${project.thumbY || 0});transform-origin:center;"` : ''} />
+        <img src="${firstSrc}" alt="${project.title}" loading="lazy" ${(project.thumbZoom || project.thumbY) ? `style="--thumb-zoom:${project.thumbZoom || 1};--thumb-y:${project.thumbY || '0px'};transform:scale(var(--thumb-zoom)) translateY(var(--thumb-y));transform-origin:center;"` : ''} />
       </div>
       <p class="thumb-title">${project.title}</p>
     `;
