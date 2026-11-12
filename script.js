@@ -205,6 +205,7 @@ const projects = [
     year: '',
     role: '',
     team: [],
+    imageOptions: { 5: { fullLength: true } },
     images: [
       'images/Daily%20Dose/02%20DailyDose_Image2_Packaging.jpg',
       { type: 'video', src: 'images/Daily%20Dose/03%20DD_01.mp4' },
@@ -528,9 +529,16 @@ function renderProject(project) {
     // All images stacked full-width
     remaining.forEach((item, idx) => {
       const imgIndex = idx + 1;
-      const zoom = project.imageOptions?.[imgIndex]?.zoom;
+      const opts = project.imageOptions?.[imgIndex];
+      const zoom = opts?.zoom;
+      const fullLength = opts?.fullLength;
       const el = makeMediaEl(item, imgIndex, allImages, `${project.title} — image ${imgIndex + 1}`);
-      if (!isVideo(item) && zoom) {
+      if (!isVideo(item) && fullLength) {
+        el.style.aspectRatio = 'unset';
+        el.style.objectFit = 'unset';
+        el.style.height = 'auto';
+        projectImages.appendChild(el);
+      } else if (!isVideo(item) && zoom) {
         el.style.transform = `scale(${zoom})`;
         const wrap = document.createElement('div');
         wrap.className = 'img-zoom-wrap';
