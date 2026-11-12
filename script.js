@@ -78,7 +78,7 @@ const projects = [
     thumbZoom: 1.2,
     thumbY: '-10px',
     singleColumn: true,
-    description: 'The Port of Prince Rupert needed to demonstrate its economic impact beyond the port itself, connecting its success to the people, businesses, and communities that rely on it across Canada. The strategy centred on real stories, using human-centred video and social content to bring the port\'s role in Canadian trade and economic resilience to life. As art director, I developed the campaign\'s look and feel, created shot lists to guide the on-location filming team, and edited all video deliverables into engaging, story-driven content.',
+    description: 'The Port of Prince Rupert needed to demonstrate its economic impact beyond the port itself, connecting its success to the people, businesses, and communities that rely on it across Canada. The strategy centred on real stories, using human-centred video and social content to bring the port\'s role in Canadian trade and economic resilience to life. As art director, I developed the campaign\'s look and feel, created shot lists to guide the on-location filming team, and edited all video deliverables into engaging, story-driven content, which have amassed 3.3M+ views on Youtube.',
     studio: 'Spring Advertising',
     year: '2026',
     role: 'Art Director, Designer, Copywriter',
