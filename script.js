@@ -198,14 +198,21 @@ const projects = [
   {
     id: 'daily-dose',
     title: 'Daily Dose',
-    thumb: '',
+    thumb: 'images/Daily%20Dose/01%20DD_Mockup_Website_01.jpg',
     singleColumn: true,
     description: '',
     studio: '',
     year: '',
     role: '',
     team: [],
-    images: [],
+    images: [
+      'images/Daily%20Dose/02%20DailyDose_Image2_Packaging.jpg',
+      { type: 'video', src: 'images/Daily%20Dose/03%20DD_01.mp4' },
+      'images/Daily%20Dose/04%20DD_SM_Feed.png',
+      { type: 'video', src: 'images/Daily%20Dose/05%20DD_02.mp4' },
+      'images/Daily%20Dose/06%20DD_Mockup_Website_02.jpg',
+      { type: 'video', src: 'images/Daily%20Dose/07%20DD_03.mp4' },
+    ],
   },
 ];
 
