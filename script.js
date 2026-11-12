@@ -195,6 +195,18 @@ const projects = [
       'images/Various%20Logos/SSEHD-Logo.jpg',
     ],
   },
+  {
+    id: 'daily-dose',
+    title: 'Daily Dose',
+    thumb: '',
+    singleColumn: true,
+    description: '',
+    studio: '',
+    year: '',
+    role: '',
+    team: [],
+    images: [],
+  },
 ];
 
 /* ==========================================
