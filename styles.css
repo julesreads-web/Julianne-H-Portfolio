@@ -270,7 +270,7 @@ p {
 
 .thumb:hover .thumb-img-wrap img {
   opacity: 0.65;
-  transform: scale(calc(var(--thumb-zoom, 1) * 1.03)) translateY(var(--thumb-y, 0px));
+  transform: scale(calc(var(--thumb-zoom, 1) * 1.03)) translateY(var(--thumb-y, 0px)) !important;
 }
 
 /* ==========================================
