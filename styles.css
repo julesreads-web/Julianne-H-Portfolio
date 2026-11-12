@@ -347,18 +347,20 @@ p {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem 1.1rem;
-  border: 1px solid #555;
-  color: #aaa;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-align: center;
   text-decoration: none;
-  transition: border-color 0.15s, color 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 
 .resume-btn:hover {
-  border-color: #fff;
-  color: #fff;
+  background: #ddd;
+  border-color: #ddd;
+  color: #000;
 }
 
 .about-territory {
