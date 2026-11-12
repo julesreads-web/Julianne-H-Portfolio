@@ -342,6 +342,23 @@ p {
   margin: 0 !important;
 }
 
+.resume-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid #555;
+  color: #aaa;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.resume-btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
 .about-territory {
   font-size: 0.8rem;
   color: #444;
