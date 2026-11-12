@@ -205,7 +205,7 @@ const projects = [
     year: '',
     role: '',
     team: [],
-    imageOptions: { 5: { fullLength: true } },
+    imageOptions: { 4: { fullLength: true } },
     images: [
       'images/Daily%20Dose/02%20DailyDose_Image2_Packaging.jpg',
       { type: 'video', src: 'images/Daily%20Dose/03%20DD_01.mp4' },
@@ -534,9 +534,7 @@ function renderProject(project) {
       const fullLength = opts?.fullLength;
       const el = makeMediaEl(item, imgIndex, allImages, `${project.title} — image ${imgIndex + 1}`);
       if (!isVideo(item) && fullLength) {
-        el.style.aspectRatio = 'unset';
-        el.style.objectFit = 'unset';
-        el.style.height = 'auto';
+        el.classList.add('img-full-length');
         projectImages.appendChild(el);
       } else if (!isVideo(item) && zoom) {
         el.style.transform = `scale(${zoom})`;

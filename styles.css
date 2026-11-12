@@ -398,6 +398,12 @@ p {
   object-fit: cover;
 }
 
+.project-images > img.img-full-length {
+  aspect-ratio: auto;
+  object-fit: fill;
+  height: auto;
+}
+
 .img-zoom-wrap {
   width: 100%;
   aspect-ratio: 16 / 9;
