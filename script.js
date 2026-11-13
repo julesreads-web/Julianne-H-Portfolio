@@ -592,6 +592,8 @@ function renderProject(project) {
         i++;
       }
     }
+  }
+
   // Prev / next project navigation
   const idx = projects.indexOf(project);
   const prev = idx > 0 ? projects[idx - 1] : null;
