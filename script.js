@@ -594,34 +594,20 @@ function renderProject(project) {
     }
   }
 
-  // Prev / next project navigation
+  // Next project navigation
   const idx = projects.indexOf(project);
-  const prev = idx > 0 ? projects[idx - 1] : null;
   const next = idx < projects.length - 1 ? projects[idx + 1] : null;
 
-  if (prev || next) {
+  if (next) {
+    const thumbSrc = next.thumb || next.thumbImages?.[0] || next.images?.[0];
     const nav = document.createElement('div');
     nav.className = 'project-nav';
-
-    function navItem(p, dir) {
-      const item = document.createElement('div');
-      item.className = `project-nav-item project-nav-${dir}`;
-      const thumbSrc = p.thumb || p.thumbImages?.[0] || p.images?.[0];
-      const arrow = dir === 'prev'
-        ? `<svg class="project-nav-arrow" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 8L14 24L30 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
-        : `<svg class="project-nav-arrow" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8L34 24L18 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-      item.innerHTML = `
-        ${dir === 'prev' ? arrow : `<img class="project-nav-thumb" src="${thumbSrc}" alt="${p.title}" />`}
-        <span class="project-nav-title">${p.title}</span>
-        ${dir === 'next' ? arrow : `<img class="project-nav-thumb" src="${thumbSrc}" alt="${p.title}" />`}
-      `;
-      item.addEventListener('click', () => showView('project', p));
-      return item;
-    }
-
-    if (prev) nav.appendChild(navItem(prev, 'prev'));
-    if (next) nav.appendChild(navItem(next, 'next'));
-
+    nav.innerHTML = `
+      <img class="project-nav-thumb" src="${thumbSrc}" alt="${next.title}" />
+      <span class="project-nav-title">${next.title}</span>
+      <svg class="project-nav-arrow" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8L34 24L18 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    `;
+    nav.addEventListener('click', () => showView('project', next));
     projectImages.appendChild(nav);
   }
 }
