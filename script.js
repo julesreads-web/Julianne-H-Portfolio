@@ -261,7 +261,7 @@ sidebarNav.querySelectorAll('a').forEach(link => {
 /* ==========================================
    View Router
    ========================================== */
-function showView(name, project) {
+function showView(name, project, { pushState = true } = {}) {
   // Hide all views
   [viewWork, viewAbout, viewProject].forEach(v => v.classList.add('is-hidden'));
 
@@ -294,7 +294,23 @@ function showView(name, project) {
     renderProject(project);
     viewProject.classList.remove('is-hidden');
   }
+
+  if (pushState) {
+    const url = name === 'project' && project ? `#${project.id}` : name === 'about' ? '#about' : '#';
+    history.pushState({ view: name, projectId: project?.id ?? null }, '', url);
+  }
 }
+
+window.addEventListener('popstate', e => {
+  const state = e.state;
+  if (!state) { showView('work', null, { pushState: false }); return; }
+  if (state.view === 'project' && state.projectId) {
+    const p = projects.find(p => p.id === state.projectId);
+    if (p) { showView('project', p, { pushState: false }); return; }
+  }
+  if (state.view === 'about') { showView('about', null, { pushState: false }); return; }
+  showView('work', null, { pushState: false });
+});
 
 /* ==========================================
    Render Work Grid
@@ -661,7 +677,8 @@ document.addEventListener('keydown', e => {
    ========================================== */
 function initApp() {
   renderGrid();
-  showView('work');
+  history.replaceState({ view: 'work', projectId: null }, '', location.href);
+  showView('work', null, { pushState: false });
 }
 if (window.__authed) {
   initApp();
