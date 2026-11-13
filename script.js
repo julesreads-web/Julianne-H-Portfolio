@@ -131,7 +131,7 @@ const projects = [
     imageOptions: { 3: { fullLength: true } },
     images: [
       'images/Daily%20Dose/02%20DailyDose_Image2_Packaging.jpg',
-      { type: 'youtube', src: 'https://www.youtube.com/embed/qgEvyY8Auog' },
+      { type: 'youtube', src: 'https://www.youtube.com/embed/qgEvyY8Auog', poster: 'images/Daily%20Dose/DD_Video01_Cover.jpg' },
       'images/Daily%20Dose/04%20DD_SM_Feed.png',
       'images/Daily%20Dose/08-DD_Mockup_Website_03.jpg',
       { type: 'video', src: 'images/Daily%20Dose/07%20DD_03.mp4' },
