@@ -9,6 +9,7 @@
 
   if (sessionStorage.getItem('auth') === '1') {
     gate.classList.add('is-hidden');
+    window.__authed = true;
     return;
   }
 
@@ -19,6 +20,8 @@
     if (input.value === PASSWORD) {
       sessionStorage.setItem('auth', '1');
       gate.classList.add('is-hidden');
+      window.__authed = true;
+      window.__authReady?.();
     } else {
       error.textContent = 'Incorrect password.';
       input.value = '';
@@ -40,12 +43,12 @@ const projects = [
   {
     id: 'editorial',
     title: 'Fresh St. Market x KITS Campaign',
-    thumb: 'images/FSM/FSM_Kits_Campaign_10.jpg',
+    thumb: 'images/thumbs/FSM_Kits_Campaign_10.webp',
     thumbImages: [
-      'images/FSM/FSM_Kits_Campaign_10.jpg',
-      'images/FSM/FSM_Kits_Campaign_9.jpg',
-      'images/FSM/FSM_Kits_Campaign_7.jpg',
-      'images/FSM/FSM_Kits_Campaign_6.jpg',
+      'images/thumbs/FSM_Kits_Campaign_10.webp',
+      'images/thumbs/FSM_Kits_Campaign_9.webp',
+      'images/thumbs/FSM_Kits_Campaign_7.webp',
+      'images/thumbs/FSM_Kits_Campaign_6.webp',
     ],
     thumbInterval: 1000,
     description: 'With Fresh St. Market opening in the heart of Kitsilano, the goal was to avoid feeling like an outsider and instead show it truly belongs. We united Kits and Fresh St. by carving "KITS" into fresh ingredients, using real people and produce—no AI—to make the neighbourhood the hero. The result is an instantly recognizable, authentic campaign that proves Fresh St. fits right in—because Kits were made for each other.',
@@ -57,24 +60,24 @@ const projects = [
       'Taylor Lee, Associate Creative Director',
     ],
     images: [
-      'images/FSM/FSM_Kits_Campaign_1.jpg',
+      'images/FSM/FSM_Kits_Campaign_1.webp',
       { type: 'video', src: 'videos/FSM_Kits_Campaign_Video.mp4' },
-      'images/FSM/FSM_Kits_Campaign_3.jpg',
-      'images/FSM/FSM_Kits_Campaign_4.jpg',
-      'images/FSM/FSM_Kits_Campaign_2.jpg',
-      'images/FSM/FSM_Kits_Campaign_6.jpg',
-      'images/FSM/FSM_Kits_Campaign_7.jpg',
-      'images/FSM/FSM_Kits_Campaign_8.jpg',
-      'images/FSM/FSM_Kits_Campaign_9.jpg',
-      'images/FSM/FSM_Kits_Campaign_10.jpg',
-      'images/FSM/FSM_Kits_Campaign_11.jpg',
-      'images/FSM/FSM_Kits_Campaign_12.jpg',
+      'images/FSM/FSM_Kits_Campaign_3.webp',
+      'images/FSM/FSM_Kits_Campaign_4.webp',
+      'images/FSM/FSM_Kits_Campaign_2.webp',
+      'images/FSM/FSM_Kits_Campaign_6.webp',
+      'images/FSM/FSM_Kits_Campaign_7.webp',
+      'images/FSM/FSM_Kits_Campaign_8.webp',
+      'images/FSM/FSM_Kits_Campaign_9.webp',
+      'images/FSM/FSM_Kits_Campaign_10.webp',
+      'images/FSM/FSM_Kits_Campaign_11.webp',
+      'images/FSM/FSM_Kits_Campaign_12.webp',
     ],
   },
   {
     id: 'prpa',
     title: 'PRPA Economic Impact Campaign',
-    thumb: 'images/PRPA/PRPA_EconomicCampaign_Cover04.jpg',
+    thumb: 'images/thumbs/PRPA_EconomicCampaign_Cover04.webp',
     thumbZoom: 1.2,
     thumbY: '-10px',
     singleColumn: true,
@@ -84,17 +87,17 @@ const projects = [
     role: 'Art Director, Designer, Copywriter',
     team: ['Rob Schlyecher, Creative Director', 'Taylor Lee, Associate Creative Director'],
     images: [
-      'images/PRPA/PRPA_EconomicCampaign_Cover04.jpg',
-      { type: 'hpan', src: 'images/PRPA/SM-Horizontal.jpg' },
-      { type: 'youtube', src: 'https://www.youtube.com/embed/OoIrvSxrBlM', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover02.jpg' },
-      { type: 'youtube', src: 'https://www.youtube.com/embed/NTXXQYTTYNk', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover03.jpg' },
-      { type: 'youtube', src: 'https://www.youtube.com/embed/WSQRRiK4YDI', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover01.jpg' },
+      'images/PRPA/PRPA_EconomicCampaign_Cover04.webp',
+      { type: 'hpan', src: 'images/PRPA/SM-Horizontal.webp' },
+      { type: 'youtube', src: 'https://www.youtube.com/embed/OoIrvSxrBlM', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover02.webp' },
+      { type: 'youtube', src: 'https://www.youtube.com/embed/NTXXQYTTYNk', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover03.webp' },
+      { type: 'youtube', src: 'https://www.youtube.com/embed/WSQRRiK4YDI', poster: 'images/PRPA/PRPA_EconomicCampaign_Cover01.webp' },
     ],
   },
   {
     id: 'packaging',
     title: 'IGA 70th Anniversary Campaign',
-    thumb: 'images/IGA/IGA_70th_02.jpg',
+    thumb: 'images/thumbs/IGA_70th_02.webp',
     thumbZoom: 1.2,
     description: "To drive sales during IGA's 70th anniversary, the challenge was to move beyond standard promotions and reinforce the brand's legacy as a trusted, community cornerstone. We responded with a nostalgic, emotionally driven campaign using vintage images of Vancouver from the Vancouver Archives, highlighting that IGA has been local since 1955. Through in-store and social, we celebrated shared history and belonging—encouraging customers to shop more often.",
     studio: 'Spring Advertising',
@@ -105,23 +108,23 @@ const projects = [
       'Taylor Lee, Associate Creative Director',
     ],
     images: [
-      'images/IGA/IGA_70th_01.jpg',
-      'images/IGA/IGA_70th_02.jpg',
-      'images/IGA/IGA_70th_03.jpg',
-      'images/IGA/IGA_70th_04.jpg',
-      'images/IGA/IGA_70th_05.jpg',
-      'images/IGA/IGA_70th_06.jpg',
-      'images/IGA/IGA_70th_07.jpg',
-      'images/IGA/IGA_70th_08.jpg',
-      'images/IGA/IGA_70th_09.jpg',
-      'images/IGA/IGA_70th_10.jpg',
-      'images/IGA/IGA_70th_11.jpg',
+      'images/IGA/IGA_70th_01.webp',
+      'images/IGA/IGA_70th_02.webp',
+      'images/IGA/IGA_70th_03.webp',
+      'images/IGA/IGA_70th_04.webp',
+      'images/IGA/IGA_70th_05.webp',
+      'images/IGA/IGA_70th_06.webp',
+      'images/IGA/IGA_70th_07.webp',
+      'images/IGA/IGA_70th_08.webp',
+      'images/IGA/IGA_70th_09.webp',
+      'images/IGA/IGA_70th_10.webp',
+      'images/IGA/IGA_70th_11.webp',
     ],
   },
   {
     id: 'daily-dose',
     title: 'Daily Dose',
-    thumb: 'images/Daily%20Dose/01%20DD_Mockup_Website_01.jpg',
+    thumb: 'images/thumbs/DD_01.webp',
     singleColumn: true,
     description: 'As a new player in Canada\'s competitive vitamin market, The Daily Dose needed to establish trust and credibility from day one. The branding team developed a cohesive visual identity that positioned the company as knowledgeable, approachable and modern. The e-commerce website brings this to life through editorial imagery, curated product collections, customer testimonials and clear educational content, making it easy to explore daily vitamin regimens and discover a simpler approach to personalized wellness.',
     studio: 'Spring Advertising',
@@ -130,46 +133,46 @@ const projects = [
     team: ['Rob Schlyecher, Creative Director', 'Taylor Lee, Associate Creative Director'],
     imageOptions: { 2: { fullLength: true } },
     images: [
-      'images/Daily%20Dose/02%20DailyDose_Image2_Packaging.jpg',
-      { type: 'youtube', src: 'https://www.youtube.com/embed/qgEvyY8Auog', poster: 'images/Daily%20Dose/DD_Video01_Cover.jpg' },
-      'images/Daily%20Dose/08-DD_Mockup_Website_03.jpg',
-      { type: 'youtube', src: 'https://www.youtube.com/embed/8ePfkwUDdLM', poster: 'images/Daily%20Dose/DD_Video02_Cover.jpg' },
-      'images/Daily%20Dose/04%20DD_SM_Feed.png',
+      'images/Daily%20Dose/02%20DailyDose_Image2_Packaging.webp',
+      { type: 'youtube', src: 'https://www.youtube.com/embed/qgEvyY8Auog', poster: 'images/Daily%20Dose/DD_Video01_Cover.webp' },
+      'images/Daily%20Dose/08-DD_Mockup_Website_03.webp',
+      { type: 'youtube', src: 'https://www.youtube.com/embed/8ePfkwUDdLM', poster: 'images/Daily%20Dose/DD_Video02_Cover.webp' },
+      'images/Daily%20Dose/04%20DD_SM_Feed.webp',
     ],
   },
   {
     id: 'brand-identity',
     title: 'Odlum Brown VanOpen',
-    thumb: 'images/VO/00%20odlum-brown-vanopen-hero-posters-1860x1240.jpg',
+    thumb: 'images/thumbs/VO_hero.webp',
     description: 'Returning after a two-year absence and newly elevated to a combined ATP and WTA Challenger 125 event, the Odlum Brown VanOpen needed a visual identity strong enough to compete nationally. We refreshed the brand with bold new visuals and a unified colour system deployed across the website, advertising, event program, and signage. The result positioned VanOpen as a world-class tournament worthy of the top-tier players taking the court at Hollyburn Country Club.',
     studio: 'Ecstatic Design Studios',
     year: '2022',
     role: 'Graphic Designer',
     team: ['Chrystal Thompson, Creative Director', 'Christopher Jorgenson, Developer', 'Verena Dreikauß, Senior Designer'],
     images: [
-      'images/VO/01%20odlum-brown-vanopen-branding-poster-03.jpg',
-      'images/VO/02%20odlum-brown-vanopen-aerial.jpg',
-      'images/VO/03%20odlum-brown-vanopen-branding-poster.jpg',
-      'images/VO/07%20odlum-brown-vanopen-branding-program-map.jpg',
-      'images/VO/05%20odlum-brown-vanopen-corporate-doc-covers.jpg',
-      'images/VO/08%20odlum-brown-vanopen-website-responsive.jpg',
-      'images/VO/10%20odlum-brown-vanopen-marketing-socialmedia-posts-02.jpg',
+      'images/VO/01%20odlum-brown-vanopen-branding-poster-03.webp',
+      'images/VO/02%20odlum-brown-vanopen-aerial.webp',
+      'images/VO/03%20odlum-brown-vanopen-branding-poster.webp',
+      'images/VO/07%20odlum-brown-vanopen-branding-program-map.webp',
+      'images/VO/05%20odlum-brown-vanopen-corporate-doc-covers.webp',
+      'images/VO/08%20odlum-brown-vanopen-website-responsive.webp',
+      'images/VO/10%20odlum-brown-vanopen-marketing-socialmedia-posts-02.webp',
       { type: 'video', src: 'images/VO/09%20ecstatic-odlum-brown-vanopen-marketing-socialmedia-posts-1.mp4' },
-      'images/VO/11%20odlum-brown-vanopen-marketing-print-ad.jpg',
-      'images/VO/12%20odlum-brown-vanopen-marketing-streetbanner.jpg',
-      'images/VO/13%20odlum-brown-vanopen-branding-poster-03-2.jpg',
-      'images/VO/16%2015%20odlum-brown-vanopen-seating.jpg',
-      'images/VO/15%20odlum-brown-vanopen-row-of-champs.jpg',
+      'images/VO/11%20odlum-brown-vanopen-marketing-print-ad.webp',
+      'images/VO/12%20odlum-brown-vanopen-marketing-streetbanner.webp',
+      'images/VO/13%20odlum-brown-vanopen-branding-poster-03-2.webp',
+      'images/VO/16%2015%20odlum-brown-vanopen-seating.webp',
+      'images/VO/15%20odlum-brown-vanopen-row-of-champs.webp',
       { type: 'video', src: 'images/VO/14%20ecstatic-odlum-brown-vanopen-signage-directional-2.mp4' },
-      'images/VO/19%20odlum-brown-vanopen-linespeep.jpg',
-      'images/VO/18odlum-brown-vanopen-community-day-banner.jpg',
-      'images/VO/17%20odlum-brown-vanopen-signage-map.jpg',
+      'images/VO/19%20odlum-brown-vanopen-linespeep.webp',
+      'images/VO/18odlum-brown-vanopen-community-day-banner.webp',
+      'images/VO/17%20odlum-brown-vanopen-signage-map.webp',
     ],
   },
   {
     id: 'agro-coffee',
     title: 'Agro Coffee Roasters',
-    thumb: 'images/Agro/00%20jh-agroroasters-packaging-bags-01-2022.jpg',
+    thumb: 'images/thumbs/Agro_hero.webp',
     description: 'Agro Roasters was scaling beyond their café roots focusing on wholesale and retail, and their packaging needed to reflect that ambition — standing out on shelves alongside established local brands. We created a wraparound illustration that connects across all sides of the bag, paired with a colour system that can flex across future coffee blends and product lines. The outcome was a cohesive packaging identity that lives beautifully on shelf as a complete work — and breaks apart just as well across merch, murals, and brand assets.',
     studio: 'Ecstatic Design Agency',
     year: '2023',
@@ -177,18 +180,18 @@ const projects = [
     team: ['Chrystal Thompson, Creative Director', 'Christopher Jorgenson, Developer'],
     images: [
       'images/Agro/01%20jh-agroroasters-packaging-bags-02-2022.gif',
-      'images/Agro/02%20jh-agroroasters-branding-stickers-2022.jpg',
-      'images/Agro/03%20jh-agroroasters-context-roaster-2022.jpg',
-      'images/Agro/04%20jh-agroroasters-branding-illustration-2022.jpg',
+      'images/Agro/02%20jh-agroroasters-branding-stickers-2022.webp',
+      'images/Agro/03%20jh-agroroasters-context-roaster-2022.webp',
+      'images/Agro/04%20jh-agroroasters-branding-illustration-2022.webp',
       'images/Agro/05%20jh-agroroasters-packaging-labels-03-2022.gif',
-      'images/Agro/06%20jh-agroroasters-branding-window-sticker-20223.jpg',
-      'images/Agro/07%20jh-agroroasters-branding-mural-2023.jpg',
-      'images/Agro/10%20jh-agroroasters-packaging-bag-03-2022.jpg',
-      'images/Agro/09%20jh-agroroasters-branding-tshirt-01.jpg',
-      'images/Agro/08%20jh-agroroasters-hero-farm-2022.jpg',
-      'images/Agro/12%20jh-agroroasters-website-responsive-2022.jpg',
-      'images/Agro/11%20jh-agroroasters-packaging-box-2022.jpg',
-      'images/Agro/13%20jh-agroroasters-website-fleet-2022.jpg',
+      'images/Agro/06%20jh-agroroasters-branding-window-sticker-20223.webp',
+      'images/Agro/07%20jh-agroroasters-branding-mural-2023.webp',
+      'images/Agro/10%20jh-agroroasters-packaging-bag-03-2022.webp',
+      'images/Agro/09%20jh-agroroasters-branding-tshirt-01.webp',
+      'images/Agro/08%20jh-agroroasters-hero-farm-2022.webp',
+      'images/Agro/12%20jh-agroroasters-website-responsive-2022.webp',
+      'images/Agro/11%20jh-agroroasters-packaging-box-2022.webp',
+      'images/Agro/13%20jh-agroroasters-website-fleet-2022.webp',
     ],
   },
   {
@@ -196,7 +199,7 @@ const projects = [
     title: 'Various Logos',
     carousel: false,
     singleColumn: true,
-    thumb: 'images/Various%20Logos/IPSC_Logo.jpg',
+    thumb: 'images/thumbs/IPSC_Logo.webp',
     description: 'A collection of logos and marks developed for clients over the years. Some live in the world, some live only in the archive.',
     studio: 'Ecstatic Design Studios<br>Spring Advertising',
     studioLabel: 'Studios',
@@ -205,13 +208,13 @@ const projects = [
     team: [],
     imageOptions: {},
     images: [
-      'images/Various%20Logos/imgi_2_450146307_1518548882090752_7637286713458763038_n.jpg',
-      'images/Various%20Logos/imgi_10_smartfarmorganics_infographic_brand_logo.jpg',
-      'images/Various%20Logos/DD_Logo_V01.jpg',
-      'images/Various%20Logos/reddogfarm-brand-totebag-03.jpg',
-      'images/Various%20Logos/imgi_34_imgi_2_ecstatic-lumostage-branding-logo-embossed-1860x1240.jpg',
-      'images/Various%20Logos/IPSC_Logo.jpg',
-      'images/Various%20Logos/SSEHD-Logo.jpg',
+      'images/Various%20Logos/imgi_2_450146307_1518548882090752_7637286713458763038_n.webp',
+      'images/Various%20Logos/imgi_10_smartfarmorganics_infographic_brand_logo.webp',
+      'images/Various%20Logos/DD_Logo_V01.webp',
+      'images/Various%20Logos/reddogfarm-brand-totebag-03.webp',
+      'images/Various%20Logos/imgi_34_imgi_2_ecstatic-lumostage-branding-logo-embossed-1860x1240.webp',
+      'images/Various%20Logos/IPSC_Logo.webp',
+      'images/Various%20Logos/SSEHD-Logo.webp',
     ],
   },
 ];
@@ -282,6 +285,11 @@ function showView(name, project) {
 
   if (name === 'about') {
     viewAbout.classList.remove('is-hidden');
+    const aboutImg = viewAbout.querySelector('img[data-src]');
+    if (aboutImg) {
+      aboutImg.src = aboutImg.dataset.src;
+      delete aboutImg.dataset.src;
+    }
   } else if (name === 'project' && project) {
     renderProject(project);
     viewProject.classList.remove('is-hidden');
@@ -327,7 +335,7 @@ function renderGrid() {
     const firstSrc = cycleImages ? cycleImages[0] : (project.thumb || project.images[0]);
     thumb.innerHTML = `
       <div class="thumb-img-wrap">
-        <img src="${firstSrc}" alt="${project.title}" loading="lazy" ${(project.thumbZoom || project.thumbY) ? `style="--thumb-zoom:${project.thumbZoom || 1};--thumb-y:${project.thumbY || '0px'};transform:scale(var(--thumb-zoom)) translateY(var(--thumb-y));transform-origin:center;"` : ''} />
+        <img src="${firstSrc}" alt="${project.title}" loading="lazy" width="800" height="450" ${(project.thumbZoom || project.thumbY) ? `style="--thumb-zoom:${project.thumbZoom || 1};--thumb-y:${project.thumbY || '0px'};transform:scale(var(--thumb-zoom)) translateY(var(--thumb-y));transform-origin:center;"` : ''} />
       </div>
       <p class="thumb-title">${project.title}</p>
     `;
@@ -651,5 +659,12 @@ document.addEventListener('keydown', e => {
 /* ==========================================
    Init
    ========================================== */
-renderGrid();
-showView('work');
+function initApp() {
+  renderGrid();
+  showView('work');
+}
+if (window.__authed) {
+  initApp();
+} else {
+  window.__authReady = initApp;
+}
