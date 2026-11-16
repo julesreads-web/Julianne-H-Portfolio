@@ -615,7 +615,7 @@ p {
    Project Navigation (prev / next)
    ========================================== */
 .project-nav {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 20px;
   margin-top: 80px;
@@ -635,8 +635,6 @@ p {
 .project-nav-title {
   font-size: 1rem;
   font-weight: 500;
-  flex: 1;
-  text-align: center;
   line-height: 1.3;
 }
 
