@@ -323,15 +323,17 @@ const carouselIntervals = [];
 const hpanEls = [];
 
 function updateHpanScroll() {
-  const panelH   = mainPanel.clientHeight;
-  const panelTop = mainPanel.getBoundingClientRect().top;
+  const isMobile   = window.innerWidth <= 900;
+  const stickyTop  = isMobile ? 60 : 0;
+  const viewH      = isMobile ? window.innerHeight - stickyTop : mainPanel.clientHeight;
+  const viewTop    = isMobile ? stickyTop : mainPanel.getBoundingClientRect().top;
   hpanEls.forEach(({ outer, img }) => {
     const outerRect   = outer.getBoundingClientRect();
-    const scrollRange = outer.offsetHeight - panelH;
-    const scrolled    = panelTop - outerRect.top;
+    const scrollRange = outer.offsetHeight - viewH;
+    const scrolled    = viewTop - outerRect.top;
     const progress    = Math.max(0, Math.min(1, scrolled / scrollRange));
     if (img.naturalWidth && img.naturalHeight) {
-      const imgDisplayW = (img.naturalWidth / img.naturalHeight) * panelH;
+      const imgDisplayW = (img.naturalWidth / img.naturalHeight) * viewH;
       const overflow    = Math.max(0, imgDisplayW - outer.offsetWidth);
       const maxPct      = (overflow / imgDisplayW) * 100;
       img.style.transform = `translateX(${-maxPct * progress}%)`;
@@ -340,6 +342,7 @@ function updateHpanScroll() {
 }
 
 mainPanel.addEventListener('scroll', updateHpanScroll, { passive: true });
+window.addEventListener('scroll', updateHpanScroll, { passive: true });
 
 function renderGrid() {
   workGrid.innerHTML = '';
@@ -394,7 +397,8 @@ function makeMediaEl(item, index, allImages, altText) {
     outer.style.cssText = 'position:relative;height:300vh;margin:-1.6rem 0 -3.1rem;';
     // Sticky inner stays fixed in view while the outer scrolls past
     const sticky = document.createElement('div');
-    sticky.style.cssText = 'position:sticky;top:0;height:100vh;overflow:hidden;';
+    sticky.className = 'hpan-sticky';
+    sticky.style.cssText = 'position:sticky;overflow:hidden;';
     const img = document.createElement('img');
     img.src = item.src;
     img.alt = altText;
