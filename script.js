@@ -596,7 +596,7 @@ function renderProject(project) {
 
   // Next project navigation
   const idx = projects.indexOf(project);
-  const next = idx < projects.length - 1 ? projects[idx + 1] : null;
+  const next = projects[(idx + 1) % projects.length];
 
   if (next) {
     const thumbSrc = next.thumb || next.thumbImages?.[0] || next.images?.[0];
